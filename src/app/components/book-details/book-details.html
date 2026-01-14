@@ -1,0 +1,13 @@
+<div class="book-details-container" *ngIf="book">
+  <div class="book-layout">
+    <img *ngIf="book.covers?.[0] || book.cover_id" [src]="getCover(book.covers?.[0] || book.cover_id)" alt="Book Cover" class="book-cover">
+    <div class="book-info">
+      <h1>{{ book.title }}</h1>
+      <h2 *ngIf="book.subtitle">{{ book.subtitle }}</h2>
+      <p><strong>Année d'édition:</strong> {{ book.first_publish_year }}</p>
+      <p><strong>Description:</strong></p>
+      <p>{{ book.description?.value || book.description || 'Aucune description disponible.' }}</p>
+    </div>
+  </div>
+  <button (click)="goBack()">Retour à la liste</button>
+</div>

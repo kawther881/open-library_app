@@ -1,0 +1,54 @@
+<div class="search-bar">
+  <input
+    type="text"
+    placeholder="Rechercher par titre"
+    [(ngModel)]="title"
+    (input)="onTitleChange($event.target.value)"
+  />
+
+  <input
+    type="number"
+    placeholder="Année de publication"
+    [(ngModel)]="year"
+    (input)="onYearChange($event.target.value)"
+  />
+
+      <span class="search-icon">&#128269;</span> <!-- icône loupe décorative -->
+
+</div>
+<style>
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #cea77a;
+    }
+    
+    .search-bar input {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .search-bar button {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #e2b47f;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .search-bar button:hover {
+        background-color: #e2b47f;
+    }
+    
+    .search-icon {
+        font-size: 20px;
+        color: #888;
+    }
+</style>

@@ -1,0 +1,50 @@
+<div class="book-list">
+    @for (book of booksList; track book.cover_id) {
+    <div class="book-card">
+        <div>
+            <img [src]="getCover(book.cover_id)" alt="Book Cover" (click)="viewBookDetails(book)" style="cursor: pointer;">
+        </div>
+        <div class="book-details">
+            <h2>
+                {{book.title}}
+            </h2>
+        </div>
+    </div>
+
+    }
+</div>
+<style>
+    .book-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+        background-color: #d9cfc2;
+    }
+
+    .book-card {
+        background-color: #cea77a;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .book-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .book-details {
+        margin-top: 10px;
+    }
+
+    .book-details h2 {
+        font-size: 18px;
+        color: #333;
+    }
+</style>
